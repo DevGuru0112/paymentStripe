@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import TextField from '@mui/material/TextField';
 
 import './register.css'
 
@@ -82,56 +83,74 @@ const Register = () => {
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input" id="name" onChange={onChange}
+                                    {/* <input className="c-form-group__input c-input js-input" id="name" onChange={onChange}
                                         type='text'
                                         name='name'
                                         value={name}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="name">First &amp; Last name</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="First & Last name" variant="filled" onChange={onChange}
+                                        type='text'
+                                        name='name'
+                                        value={name}
+                                        required
+                                    />
+                                    {/* <label className="c-form-group__input-label" htmlFor="name">First &amp; Last name</label> */}
                                 </div>
                                 <div className="c-form-group js-form-group">
                                     <div className="c-form-group__message-holder">
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input" id="phone" type="text" onChange={onChange}
+                                    {/* <input className="c-form-group__input c-input js-input" id="phone" type="text" onChange={onChange}
                                         name='phone'
                                         value={phone}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="phone">Phone Number</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="Phone Number" variant="filled" onChange={onChange}
+                                        name='phone'
+                                        value={phone}
+                                        required
+                                    />
                                 </div>
                                 <div className="c-form-group js-form-group">
                                     <div className="c-form-group__message-holder">
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input js-website-url" id="website_url" type="text" onChange={onChange}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="Website URL" variant="filled" type="url" onChange={onChange}
                                         name='website_url'
                                         value={website_url}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="website_url">Website URL</label>
+                                        required
+                                    />
                                 </div>
                                 <div className="c-form-group js-form-group">
                                     <div className="c-form-group__message-holder">
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input" id="email" type="text" onChange={onChange}
+                                    {/* <input className="c-form-group__input c-input js-input" id="email" type="text" onChange={onChange}
                                         name='email'
                                         value={email}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="email">Email</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="Email" variant="filled" type="Email" onChange={onChange}
+                                        name='email'
+                                        value={email}
+                                        required
+                                    />
                                 </div>
                                 <div className="c-form-group c-form-group--password js-form-group">
                                     <div className="c-form-group__message-holder">
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input js-password" id="password" type="password" onChange={onChange}
+                                    {/* <input className="c-form-group__input c-input js-input js-password" id="password" type="password" onChange={onChange}
                                         name='password'
                                         value={password}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="password">Password</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="Password" variant="filled" type="password" onChange={onChange}
+                                        name='password'
+                                        value={password}
+                                        required
+                                    />
                                     <div className="c-checklist js-checklist">
                                         <span className="c-checklist__item js-checklist-item" data-check="validate-characters">
                                             <span className="c-checklist__icon c-checklist__icon--success"><i className="mi mi--xs"></i></span>
@@ -155,11 +174,15 @@ const Register = () => {
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input" id="confirm_password" type="password" onChange={onChange}
+                                    {/* <input className="c-form-group__input c-input js-input" id="confirm_password" type="password" onChange={onChange}
                                         name='password2'
                                         value={password2}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="confirm_password">Confirm password</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="name" label="Confirm Password" variant="filled" type="password" onChange={onChange}
+                                        name='password2'
+                                        value={password2}
+                                        required
+                                    />
                                 </div>
 
 

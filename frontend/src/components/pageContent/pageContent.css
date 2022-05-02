@@ -11,6 +11,9 @@ section.welcome {
   .welcome {
     background-image: url(../assets/PW20_bridge_usa_monster.svg);
   }
+  .btn-primary{
+    margin-right: 10px !important;
+  }
   /* section.welcome:after {
     content: '';
     width: 100%;

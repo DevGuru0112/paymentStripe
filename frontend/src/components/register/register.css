@@ -20,6 +20,23 @@
     background-repeat: no-repeat;
     background-position: 0 -215px;
 }
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root {
+    border-radius: 4px !important;
+    border: 1px solid #9cbacb !important; 
+}
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:before {
+    border-bottom: none !important;
+}
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:after{
+    border-bottom: none !important;
+}
+.css-19mk8g1-MuiInputBase-root-MuiFilledInput-root.Mui-focused {
+
+    border: 1px solid #0076ff !important; 
+}
+.css-10botns-MuiInputBase-input-MuiFilledInput-input:-webkit-autofill{
+    border-radius: 4px !important;
+}
 .c-logo--pwpaymentwall {
     background-image: url(../assets/logo-paymentwall-2020.png);
     background-position: unset;

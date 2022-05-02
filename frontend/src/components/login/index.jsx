@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import TextField from '@mui/material/TextField';
 
 import '../register/register.css'
 
@@ -32,7 +33,7 @@ const Register = () => {
                 },
             };
             const body = JSON.stringify(newUser);
-            const res = await axios.post("http://127.0.0.1:8000/users/login/", body,config);
+            const res = await axios.post("http://127.0.0.1:8000/users/login/", body, config);
             console.log(res.data);
             navigate("/dashboard");
         } catch (err) {
@@ -49,6 +50,7 @@ const Register = () => {
                         <div className="c-header__nav c-nav c-nav--right ">
                             <Link className="c-nav__link" to="/register">Sign up</Link></div>
                     </div>
+
                 </header>
                 <div className="c-main">
                     <div className="o-container">
@@ -63,22 +65,32 @@ const Register = () => {
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input" id="email" type="text" onChange={onChange}
+
+                                    {/* <input className="c-form-group__input c-input js-input" id="email" type="text" onChange={onChange}
                                         name='email'
                                         value={email}
-                                        required />
-                                    <label className="c-form-group__input-label" htmlFor="email">Email</label>
+                                        required /> */}
+                                    <TextField className="c-form-group__input c-input js-input" id="email" label="Email" variant="filled" onChange={onChange}
+                                        name='email'
+                                        value={email}
+                                        required
+                                    />
                                 </div>
                                 <div className="c-form-group c-form-group--password js-form-group">
                                     <div className="c-form-group__message-holder">
                                         <span className="c-form-group__message c-form-group__message--success"><i className="mi mi--md"></i></span>
                                         <span className="c-form-group__message c-form-group__message--error js-error"></span>
                                     </div>
-                                    <input className="c-form-group__input c-input js-input js-password" id="password" type="password" onChange={onChange}
+                                    <TextField className="c-form-group__input c-input js-input js-password" id="password" label="Password" type="password" variant="filled" onChange={onChange}
+                                        name='password'
+                                        value={password}
+                                        required
+                                    />
+                                    {/* <input className="c-form-group__input c-input js-input js-password" id="password" type="password" onChange={onChange}
                                         name='password'
                                         value={password}
                                         required />
-                                    <label className="c-form-group__input-label" htmlFor="password">Password</label>
+                                    <label className="c-form-group__input-label" htmlFor="password">Password</label> */}
                                     <div className="c-checklist js-checklist">
                                         <span className="c-checklist__item js-checklist-item" data-check="validate-characters">
                                             <span className="c-checklist__icon c-checklist__icon--success"><i className="mi mi--xs"></i></span>
