@@ -12,6 +12,11 @@
     padding-right: 15px;
     margin: 0 auto;
 }
+
+.c-header__logo {
+    float: left;
+    margin: 15px 0;
+}
 .c-logo {
     width: 160px;
     height: 40px;
@@ -83,6 +88,10 @@
     -moz-transition: all .5s ease;
     transition: all .5s ease;
 }
+/* .c-page--pwpaymentwall .c-nav{
+    margin: 0 !important;
+} */
+
 .u-hidden {
     margin: -1px!important;
     padding: 0!important;
@@ -392,14 +401,7 @@ button, input {
     padding-left: 15px;
     padding-right: 15px;
 }
-.o-container {
-    position: relative;
-    width: 100%;
-    max-width: 1090px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0 auto;
-}
+
 .c-footer__sertificates {
     display: -webkit-box;
     display: -webkit-flex;
@@ -440,10 +442,6 @@ button, input {
     margin-bottom: 50px;
 }
 
-.c-header__logo {
-    float: left;
-    margin: 15px 0;
-}
 .c-page--pwpaymentwall .c-nav {
     margin: 16px 0 14px;
 }

@@ -228,7 +228,8 @@ const Register = () => {
                     <div className="o-container">
                         <div className="c-footer__sertificates"><svg className="c-footer__sertificates-item" width="112" height="42"></svg><svg className="c-footer__sertificates-item" width="114" height="42"></svg><svg className="c-footer__sertificates-item"
                             width="120" height="42"></svg></div>
-                        <div className="c-footer__policies on-center"><Link to="https://www.paymentwall.com/en/privacypolicy" >Privacy Policy</Link><Link to="https://www.paymentwall.com/en/terms" >Terms of Service</Link><Link to="https://www.paymentwall.com/en/faq/infringement/485" >DMCA Policy</Link>
+                        <div className="c-footer__policies on-center"><Link to="https://www.paymentwall.com/en/privacypolicy" >Privacy Policy</Link>
+                            <Link to="https://www.paymentwall.com/en/terms" >Terms of Service</Link><Link to="https://www.paymentwall.com/en/faq/infringement/485" >DMCA Policy</Link>
                             <Link to="https://www.paymentwall.com/en/cookies-policy" >Cookies Policy</Link><Link to="https://www.paymentwall.com/gdpr" >GDPR Policy</Link></div>
                         <p className="c-footer__copyright on-center">©&nbsp;2022 Paymentwall, Inc. 255 9th Street, San Francisco, CA, 94103.</p>
                     </div>

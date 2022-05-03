@@ -11,6 +11,7 @@ const Register = () => {
         email: "",
         password: "",
     });
+
     const navigate = useNavigate();
 
     const { email, password } = formData;
@@ -20,7 +21,6 @@ const Register = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
         const newUser = {
             email,
             password,
@@ -34,15 +34,17 @@ const Register = () => {
             };
             const body = JSON.stringify(newUser);
             const res = await axios.post("http://127.0.0.1:8000/users/login/", body, config);
-            console.log(res.data);
-            navigate("/dashboard");
+            if ('success') {
+                navigate("/dashboard");
+            }
         } catch (err) {
             console.error(err.response.data);
         }
     };
-
+    
     return (
         <div>
+            {console.log('-------',email)}
             <div className="c-page c-page--signup  c-page--pwpaymentwall o-wrapper">
                 <header className="c-header c-header--pwpaymentwall ">
                     <div className="o-container">

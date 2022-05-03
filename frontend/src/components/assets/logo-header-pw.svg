@@ -3,7 +3,7 @@
     <style>
       .pyramid,
       .paymentwall {
-        fill-rule: evenodd;
+        fillRule: evenodd;
         }
       .pyramid {
         fill: #fec013;

@@ -13,7 +13,7 @@ def login(request):
     user = Users.objects.get(email=data['email'], password = data['password'])
     print(user)
     if user:
-        return Response("111")
+        return Response('success')
     else: 
         return Response("no User")
 
@@ -29,3 +29,6 @@ def register(request):
     )
     user.save()
     return Response('sucess')
+
+# @api_view(['GET'])
+# def account(request):

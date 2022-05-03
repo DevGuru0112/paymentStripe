@@ -16,14 +16,13 @@ const Demo = () => {
   return (
     <Router>
       <Suspense fallback={<div> Loading... </div>}>
-        {" "}
         <Routes>
-          <Route path="/" element={<FirstPage />} />{" "}
-          <Route path="/login" element={<Login />} />{" "}
-          <Route path="/register" element={<Register />} />{" "}
-          <Route path="/dashboard" element={<Dashboard />} />{" "}
-        </Routes>{" "}
-      </Suspense>{" "}
+          <Route path="/" element={<FirstPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 };

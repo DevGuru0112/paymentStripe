@@ -456,7 +456,7 @@
   }
   header {
     background-color: #fff;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     -webkit-transition: 300ms;
     -o-transition: 300ms;
     transition: 300ms;
@@ -466,6 +466,9 @@
     width: 100%;
     z-index: 1000;
     transition: padding 0.3s;
+  }
+  .c-logo--pwpaymentwall {
+    margin: 25 0 !important;
   }
   header.scrolled.dark .button-cta {
       background: #ffc013;
