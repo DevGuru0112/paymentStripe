@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './acount.css'
+import { connect } from 'react-redux';
 
-const Account = () => {
+const Account = (props) => {
+  const { userName } = props;
+  console.log("~~~~~~~~~~~~~~~~~", props);
+  
+  useEffect(() => {
+    alldata();
+  }, [])
+
+  const alldata = async () => {
+    try {
+      const res = await axios.get("http://127.0.0.1:8000/users/account/");
+      // setToken(response.data.accessToken);
+      // const decoded = jwt_decode(response.data.accessToken);
+      // setName(decoded.name);
+      // setExpire(decoded.exp);
+      console.log(res);
+    } catch (error) {
+      // if (error.response) {
+      // }
+
+    }
+  };
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -117,5 +140,9 @@ const Account = () => {
     </div>
   )
 }
-
-export default Account;
+const mapStateToProps = (state) => {
+  return ({
+    userName: state.UserName
+  });
+}
+export default connect(mapStateToProps, null)(Account);

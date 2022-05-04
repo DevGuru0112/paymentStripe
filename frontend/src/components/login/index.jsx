@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import TextField from '@mui/material/TextField';
 
 import '../register/register.css'
-
-const Register = () => {
+import { connect } from 'react-redux';
+import { setUserName } from '../../redux/action';
+const Register = ({ userName, setUserName }) => {
 
     const [formData, setFormData] = useState({
         email: "",
@@ -20,6 +21,7 @@ const Register = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = async (e) => {
+        // console.log("submit")
         e.preventDefault();
         const newUser = {
             email,
@@ -33,18 +35,19 @@ const Register = () => {
                 },
             };
             const body = JSON.stringify(newUser);
-            const res = await axios.post("http://127.0.0.1:8000/users/login/", body, config);
+            await axios.post("http://127.0.0.1:8000/users/login/", body, config);
             if ('success') {
-                navigate("/dashboard");
+                setUserName(newUser.email);
+
             }
         } catch (err) {
             console.error(err.response.data);
         }
     };
-    
+    // navigate("/dashboard");
+    useEffect(() => { console.log('username',userName) }, [userName])
     return (
         <div>
-            {console.log('-------',email)}
             <div className="c-page c-page--signup  c-page--pwpaymentwall o-wrapper">
                 <header className="c-header c-header--pwpaymentwall ">
                     <div className="o-container">
@@ -147,4 +150,14 @@ const Register = () => {
     )
 }
 
-export default Register;
+const mapStateToProps = (state) => {
+    return ({
+        userName: state.UserName
+    });
+}
+const mapDispatchToProps = (dispatch) => {
+    return ({
+        setUserName: (_val) => dispatch(setUserName(_val)),
+    });
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

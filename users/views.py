@@ -30,5 +30,9 @@ def register(request):
     user.save()
     return Response('sucess')
 
-# @api_view(['GET'])
-# def account(request):
+@api_view(['GET'])
+def account(request):
+    
+    data = Users.objects.all().values()
+    print('-------',data)
+    return Response(data)
